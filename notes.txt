@@ -1,0 +1,73 @@
+1. Baseline & Odin - Densenet | ID - Cifar10 | OOD - Svhn, imagenet_resize, lsun_resize
+    Baseline method: in_distribution: cifar10==========
+    out_distribution: svhn
+    TNR    AUROC  DTACC  AUIN   AUOUT 
+    40.22  89.87  83.20  83.21  94.71
+
+    out_distribution: imagenet_resize
+    TNR    AUROC  DTACC  AUIN   AUOUT 
+    58.98  94.08  88.49  95.28  92.30
+
+    out_distribution: lsun_resize
+    TNR    AUROC  DTACC  AUIN   AUOUT 
+    66.62  95.43  90.26  96.49  94.05
+
+    ODIN method: in_distribution: cifar10==========
+    out_distribution: svhn
+    TNR    AUROC  DTACC  AUIN   AUOUT 
+    87.22  95.87  92.01  79.97  98.40
+    temperature: 1
+    magnitude: 0.005
+
+    out_distribution: imagenet_resize
+    TNR    AUROC  DTACC  AUIN   AUOUT 
+    92.32  98.51  93.91  98.54  98.51
+    temperature: 100
+    magnitude: 0.0014
+
+    out_distribution: lsun_resize
+    TNR    AUROC  DTACC  AUIN   AUOUT 
+    96.21  99.23  95.67  99.27  99.22
+    temperature: 100
+    magnitude: 0.0014
+
+2. Mahalanobis - Densenet | ID - Cifar10, Cifar100 | OOD - Svhn, imagenet_resize, lsun_resize
+    a. Extract detection characteristics:
+
+    b. Train simple detectors:
+
+        in_distribution: cifar10==========
+        out_distribution: svhn
+        TNR    AUROC  DTACC  AUIN   AUOUT 
+        83.87  95.29  90.79  83.84  98.23
+        Input noise: Mahalanobis_0.01
+
+        out_distribution: imagenet_resize
+        TNR    AUROC  DTACC  AUIN   AUOUT 
+        95.10  98.69  95.09  98.32  98.77
+        Input noise: Mahalanobis_0.0
+
+        out_distribution: lsun_resize
+        TNR    AUROC  DTACC  AUIN   AUOUT 
+        96.78  99.08  96.22  98.87  99.09
+        Input noise: Mahalanobis_0.0005
+
+        in_distribution: cifar100==========
+        out_distribution: svhn
+        TNR    AUROC  DTACC  AUIN   AUOUT 
+        82.52  97.23  91.63  94.82  98.81
+        Input noise: Mahalanobis_0.01
+
+        out_distribution: imagenet_resize
+        TNR    AUROC  DTACC  AUIN   AUOUT 
+        84.80  96.15  90.60  94.47  96.57
+        Input noise: Mahalanobis_0.001
+
+        out_distribution: lsun_resize
+        TNR    AUROC  DTACC  AUIN   AUOUT 
+        89.96  97.42  92.88  97.10  97.28
+        Input noise: Mahalanobis_0.001
+
+---------------------------------------------------------------
+1. 1. Baseline & Odin - ViT finetuned on Cifar100 | ID - Cifar100 | OOD - Cifar10
+    
